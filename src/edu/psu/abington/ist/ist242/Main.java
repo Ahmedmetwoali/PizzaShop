@@ -16,6 +16,7 @@ public class Main {
     int cCount = 1;
     int oCount = 1;
     public static void main(String[] args) {
+        System.out.println("hello there");
 
         String customerInfoMenu = "1) Add Customer \n 2) Update Customer \n 3) Delete Customer";
         Scanner scnr = new Scanner(System.in);
@@ -36,6 +37,8 @@ public class Main {
         final char CUST_PRNT = 'P';
         final char HELP_CODE = '?';
         char userAction;
+        char pickMenu;
+
         final String PROMPT_ACTION = "Add 'C'ustomer, 'P'rint Customer, List 'M'enu, Add 'O'rder, List 'T'ransaction or 'E'xit: ";
         ArrayList<Customer> cList = new ArrayList<>();
         ArrayList<Menu> mList = new ArrayList<>();
@@ -78,6 +81,7 @@ public class Main {
             }
 
             userAction = getAction(PROMPT_ACTION);
+            pickMenu = getAction(mList);
         }
     }
 
@@ -85,6 +89,18 @@ public class Main {
         Scanner scnr = new Scanner(System.in);
         String answer = "";
         System.out.println(prompt);
+        answer = scnr.nextLine().toUpperCase() + " ";
+        char firstChar = answer.charAt(0);
+        return firstChar;
+    }
+    public static char getAction(ArrayList<Menu> menuList) {
+        Scanner scnr = new Scanner(System.in);
+        String answer = "";
+        System.out.println("Pick menu Item");
+        for (Menu item: menuList)
+        {
+            System.out.println(item);
+        }
         answer = scnr.nextLine().toUpperCase() + " ";
         char firstChar = answer.charAt(0);
         return firstChar;
