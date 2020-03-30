@@ -100,9 +100,9 @@ public class Main {
         return cust;
     }
     public Order addOrder(){
-        Order order = new Order(oCount++);
+        Order orderm = new Order(oCount++);
 
-        return order;
+        return orderm;
     }
 
 }
